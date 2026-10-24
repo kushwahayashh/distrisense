@@ -1,0 +1,40 @@
+{
+  "levels": [
+    "P50"
+  ],
+  "methods": [
+    {
+      "id": "lp",
+      "name": "LP optimizer",
+      "planned_objective": 9698,
+      "realized_cost_mean": 22279.28,
+      "fulfillment_mean": 0.66,
+      "fulfillment_p10": 0.61,
+      "freight": 5954,
+      "unmet_units": 1333,
+      "checker_passed": true
+    },
+    {
+      "id": "pro_rata",
+      "name": "Pro-rata",
+      "planned_objective": 10376,
+      "realized_cost_mean": 23393.244,
+      "fulfillment_mean": 0.645,
+      "fulfillment_p10": 0.592,
+      "freight": 6132,
+      "unmet_units": 1439,
+      "checker_passed": true
+    },
+    {
+      "id": "greedy",
+      "name": "Cheapest-first greedy",
+      "planned_objective": 11055,
+      "realized_cost_mean": 24284.415,
+      "fulfillment_mean": 0.63,
+      "fulfillment_p10": 0.575,
+      "freight": 6430,
+      "unmet_units": 1546,
+      "checker_passed": true
+    }
+  ]
+}

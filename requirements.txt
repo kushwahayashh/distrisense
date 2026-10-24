@@ -1,0 +1,9 @@
+streamlit>=1.49,<1.50
+plotly>=5.22,<6
+pandas>=2.2,<3
+
+# Engine dependencies (used by the real pipeline, not by the app)
+numpy>=1.26,<3
+scipy>=1.11,<2
+scikit-learn>=1.4,<2
+pytest>=8,<9

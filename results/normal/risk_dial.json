@@ -1,0 +1,65 @@
+{
+  "draws": 200,
+  "levels": [
+    {
+      "level": "P50",
+      "freight": 5022,
+      "realized_cost_mean": 10808.4,
+      "realized_cost_p90": 12321.576,
+      "fulfillment_mean": 0.88,
+      "fulfillment_p10": 0.83,
+      "shipped_units": 2908,
+      "unmet_units": 453
+    },
+    {
+      "level": "P60",
+      "freight": 5899,
+      "realized_cost_mean": 11091.784,
+      "realized_cost_p90": 12644.634,
+      "fulfillment_mean": 0.898,
+      "fulfillment_p10": 0.848,
+      "shipped_units": 3172,
+      "unmet_units": 385
+    },
+    {
+      "level": "P70",
+      "freight": 6771,
+      "realized_cost_mean": 11396.808,
+      "realized_cost_p90": 12992.361,
+      "fulfillment_mean": 0.916,
+      "fulfillment_p10": 0.866,
+      "shipped_units": 3415,
+      "unmet_units": 317
+    },
+    {
+      "level": "P80",
+      "freight": 7779,
+      "realized_cost_mean": 11858.592,
+      "realized_cost_p90": 13518.795,
+      "fulfillment_mean": 0.934,
+      "fulfillment_p10": 0.884,
+      "shipped_units": 3630,
+      "unmet_units": 249
+    },
+    {
+      "level": "P90",
+      "freight": 9401,
+      "realized_cost_mean": 13003.016,
+      "realized_cost_p90": 14823.438,
+      "fulfillment_mean": 0.952,
+      "fulfillment_p10": 0.902,
+      "shipped_units": 3964,
+      "unmet_units": 181
+    },
+    {
+      "level": "P95",
+      "freight": 11226,
+      "realized_cost_mean": 14406.9,
+      "realized_cost_p90": 16423.866,
+      "fulfillment_mean": 0.97,
+      "fulfillment_p10": 0.92,
+      "shipped_units": 4337,
+      "unmet_units": 113
+    }
+  ]
+}

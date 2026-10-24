@@ -1,0 +1,122 @@
+{
+  "ok": true,
+  "files": [
+    {
+      "name": "products.csv",
+      "rows": 5,
+      "status": "ok",
+      "errors": 0,
+      "warnings": 0
+    },
+    {
+      "name": "locations.csv",
+      "rows": 11,
+      "status": "ok",
+      "errors": 0,
+      "warnings": 0
+    },
+    {
+      "name": "inventory_batches.csv",
+      "rows": 30,
+      "status": "ok",
+      "errors": 0,
+      "warnings": 0
+    },
+    {
+      "name": "store_inventory.csv",
+      "rows": 40,
+      "status": "ok",
+      "errors": 0,
+      "warnings": 0
+    },
+    {
+      "name": "routes.csv",
+      "rows": 24,
+      "status": "ok",
+      "errors": 0,
+      "warnings": 0
+    },
+    {
+      "name": "demand_history.csv",
+      "rows": 2080,
+      "status": "ok",
+      "errors": 0,
+      "warnings": 0
+    },
+    {
+      "name": "config.json",
+      "rows": 1,
+      "status": "ok",
+      "errors": 0,
+      "warnings": 0
+    }
+  ],
+  "checks": [
+    {
+      "id": "schema",
+      "label": "Required columns present",
+      "passed": true,
+      "detail": "7 files"
+    },
+    {
+      "id": "no_negative",
+      "label": "No negative quantities or costs",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "id": "unique_ids",
+      "label": "IDs are unique",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "id": "references",
+      "label": "No orphan references",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "id": "dates",
+      "label": "Dates parse and expiry is in the future",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "id": "levels",
+      "label": "Forecast quantiles never cross",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "id": "leakage",
+      "label": "Forecast uses past weeks only",
+      "passed": true,
+      "detail": ""
+    }
+  ],
+  "errors": [],
+  "warnings": [
+    {
+      "file": "demand_history.csv",
+      "row": 173,
+      "column": "units_sold",
+      "rule": "short_series",
+      "message": "Fewer than 20 residuals for S6/SKU04; SKU-pooled residuals used."
+    },
+    {
+      "file": "inventory_batches.csv",
+      "row": 22,
+      "column": "expiry_date",
+      "rule": "expiring_soon",
+      "message": "W1-SKU03-B2 expires within 7 days of the planning week."
+    },
+    {
+      "file": "routes.csv",
+      "row": 19,
+      "column": "is_active",
+      "rule": "inactive_route",
+      "message": "Route W3->S8 is inactive and was excluded from eligibility."
+    }
+  ]
+}

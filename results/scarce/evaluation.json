@@ -1,0 +1,47 @@
+{
+  "pinball": {
+    "scored_weeks": "41-52",
+    "baseline_ma4": 4.21,
+    "ml_gbm": 4.08,
+    "selected": "ml_gbm"
+  },
+  "calibration": [
+    {
+      "level": "P50",
+      "nominal": 0.5,
+      "observed": 0.48,
+      "within_tolerance": true
+    },
+    {
+      "level": "P60",
+      "nominal": 0.6,
+      "observed": 0.61,
+      "within_tolerance": true
+    },
+    {
+      "level": "P70",
+      "nominal": 0.7,
+      "observed": 0.73,
+      "within_tolerance": true
+    },
+    {
+      "level": "P80",
+      "nominal": 0.8,
+      "observed": 0.82,
+      "within_tolerance": true
+    },
+    {
+      "level": "P90",
+      "nominal": 0.9,
+      "observed": 0.89,
+      "within_tolerance": true
+    },
+    {
+      "level": "P95",
+      "nominal": 0.95,
+      "observed": 0.97,
+      "within_tolerance": true
+    }
+  ],
+  "expiry_risk_units": 53
+}

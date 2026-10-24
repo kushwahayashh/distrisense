@@ -1,0 +1,29 @@
+{
+  "scenario_id": "scarce",
+  "scenario_name": "Scarce Supply",
+  "planning_week": "2026-W44",
+  "seed": 42,
+  "forecaster_used": "ml_gbm",
+  "forecaster_scores": {
+    "baseline_ma4": 4.21,
+    "ml_gbm": 4.08
+  },
+  "solver_status": "optimal",
+  "solve_time_seconds": 0.25,
+  "levels": [
+    "P50",
+    "P60",
+    "P70",
+    "P80",
+    "P90",
+    "P95"
+  ],
+  "default_level": "P50",
+  "network": {
+    "warehouses": 3,
+    "stores": 8,
+    "skus": 5
+  },
+  "latest_arrival_day": 2,
+  "min_shelf_life_days": 3
+}

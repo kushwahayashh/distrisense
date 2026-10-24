@@ -1,0 +1,29 @@
+{
+  "scenario_id": "normal",
+  "scenario_name": "Normal",
+  "planning_week": "2026-W44",
+  "seed": 42,
+  "forecaster_used": "baseline_ma4",
+  "forecaster_scores": {
+    "baseline_ma4": 3.84,
+    "ml_gbm": 3.91
+  },
+  "solver_status": "optimal",
+  "solve_time_seconds": 0.18,
+  "levels": [
+    "P50",
+    "P60",
+    "P70",
+    "P80",
+    "P90",
+    "P95"
+  ],
+  "default_level": "P50",
+  "network": {
+    "warehouses": 3,
+    "stores": 8,
+    "skus": 5
+  },
+  "latest_arrival_day": 2,
+  "min_shelf_life_days": 3
+}

@@ -1,0 +1,23 @@
+diff --git a/tests/test_targets.py b/tests/test_targets.py
+--- a/tests/test_targets.py
++++ b/tests/test_targets.py
+@@ -1,5 +1,7 @@
+ """Tests for forecast-to-optimizer target calculation."""
+ 
++from pathlib import Path
++
+ import numpy as np
+ import pandas as pd
+ import pytest
+@@ -11,7 +13,10 @@ from src.engine import load_forecast
+ 
+ @pytest.fixture
+ def forecast():
+-    return load_forecast("normal")
++    # Use committed input rather than ignored, locally generated outputs.
++    outputs = (Path(__file__).resolve().parents[1]
++               / "deliveries/normal-candidate/inputs/outputs")
++    return load_forecast("normal", output_dir=outputs)
+ 
+ 
+ @pytest.fixture

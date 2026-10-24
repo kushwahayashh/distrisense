@@ -1,0 +1,16 @@
+{
+  "mock": false,
+  "integration_validated": true,
+  "scenarios": [
+    {"id": "normal", "name": "Normal"}
+  ],
+  "acceptance": {
+    "scope": "Normal only; scarce_supply and expiry_trap remain unavailable",
+    "backend_pr": "https://github.com/rahullamani01/engine-module-/pull/1",
+    "reviewed_backend_commit": "75b1a6cdb5ddb649262e405f347034ac8f133832",
+    "artifact_commit": "146d63dfb466746a2dccbc3578759987aaff1724",
+    "backend_merge_commit": "f61c73d174be557953dd5e60da1e796f8ad3384f",
+    "report": "docs/NORMAL_PR1_REVIEW.md",
+    "authorization": "App owner explicitly approved merge and Normal activation"
+  }
+}

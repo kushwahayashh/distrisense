@@ -28,6 +28,9 @@ node = plan_data["levels"][level]
 
 shipments = pd.DataFrame(node.get("shipments", []))
 unmet = pd.DataFrame(node.get("unmet", []))
+if not unmet.empty:
+    # Backend exports all target pairs, including those completely covered.
+    unmet = unmet[unmet["unmet_units"] > 0]
 totals = node.get("totals", {})
 blocked = node.get("blocked", {})
 checker = node.get("checker", {})

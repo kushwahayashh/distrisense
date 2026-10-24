@@ -53,6 +53,10 @@ def planner_ready(scenario_id: str) -> bool:
     if source_root() != ENGINE_RESULTS:
         return True
     index = load_index() or {}
+    if "scenarios" in index:
+        accepted = {backend_scenario(row["id"]) for row in index["scenarios"]}
+        if backend_scenario(scenario_id) not in accepted:
+            return False
     required = ("meta.json", "validation.json", "forecast.json", "plan.json",
                 "risk_dial.json", "baselines.json", "evaluation.json")
     return (index.get("mock") is False

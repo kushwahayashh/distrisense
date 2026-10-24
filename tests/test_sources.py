@@ -72,6 +72,7 @@ def test_sidebar_source_switch():
     app.sidebar.selectbox[0].select("Engine results").run(timeout=30)
     assert not app.exception
     assert app.session_state["data_source"] == "Engine results"
-    assert any("not available yet" in message.value for message in app.info)
+    assert any("computed from synthetic data" in message.value for message in app.info)
+    assert not any("Mock artifacts" in message.value for message in app.sidebar.caption)
     app.sidebar.selectbox[0].select("Demo").run(timeout=30)
     assert not app.exception

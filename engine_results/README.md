@@ -4,6 +4,13 @@ This directory is intentionally separate from `results/`, which holds the demo.
 Choose **Engine results** in the sidebar to read this directory. Missing files
 show an unavailable state; the app never substitutes demo data here.
 
+The `normal/` directory contains all seven computed files from backend PR #1
+at `146d63d`, verified against its fixed head `75b1a6c`. The app owner approved
+Normal acceptance and activation, recorded in `index.json`. Scarce Supply and
+Expiry Trap remain unavailable. See `../docs/NORMAL_PR1_REVIEW.md` for evidence.
+The original backend metadata's `joint_acceptance_pending` field is preserved
+as delivery-time provenance; the frontend index records subsequent acceptance.
+
 Use canonical backend scenario directories:
 
 ```

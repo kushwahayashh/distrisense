@@ -176,6 +176,9 @@ st.caption(
 
 st.divider()
 st.subheader("Baselines on identical inputs")
+baseline_levels = artifacts.load_json(sid, "baselines.json", {}).get("levels", [])
+if baseline_levels:
+    st.caption(f"Comparison planning level: {', '.join(baseline_levels)}. All methods use identical inputs and demand draws.")
 
 if baselines.empty:
     st.info("No baseline comparison found.")

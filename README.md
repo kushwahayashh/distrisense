@@ -6,9 +6,11 @@ Weekly FMCG replenishment planner. For each store × SKU it recommends which
 warehouse batch to ship, how many units, and from where — and refuses any
 shipment that would arrive late or with too little shelf life left.
 
-This repository currently contains the **Streamlit app** and a **mock artifact
-generator**. The forecasting and optimization engine is built separately and
-plugs into the same `results/` contract.
+This repository contains the **Streamlit app**, a separate mock demo, and the
+accepted computed **Normal** scenario in `engine_results/normal/`. Forecasting,
+optimization and evaluation live in the [backend repository](https://github.com/rahullamani01/engine-module-).
+Choose **Engine results → Normal** to view the verified delivery plans and Risk
+Dial. Computed Scarce Supply and Expiry Trap deliveries are still pending.
 
 > ⚠️ All numbers in `results/` are synthetic mock data for UI development.
 > They are not engine results and must not be presented as such.

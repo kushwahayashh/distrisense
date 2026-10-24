@@ -11,8 +11,6 @@ CSS = """
 .block-container { padding-top: 2.0rem; padding-bottom: 3rem; max-width: 1180px; }
 .bw-brand { font-size: 1.15rem; font-weight: 800; color: #0F172A; letter-spacing: -0.01em; }
 .bw-hero { margin-bottom: 1.1rem; }
-.bw-eyebrow { font-size: .70rem; letter-spacing: .16em; text-transform: uppercase;
-              color: #0F766E; font-weight: 800; }
 .bw-title { font-size: 2.0rem; font-weight: 800; margin: .15rem 0 .35rem;
             color: #0F172A; letter-spacing: -0.02em; line-height: 1.15; }
 .bw-sub { color: #64748B; font-size: .94rem; max-width: 78ch; line-height: 1.5; }
@@ -61,7 +59,6 @@ def header(title: str, subtitle: str, meta: dict | None = None) -> None:
         badges += badge(f"Solver: {status}", "ok" if status == "optimal" else "warn")
     st.markdown(
         f'<div class="bw-hero">'
-        f'<div class="bw-eyebrow">DistriSense · Distribution Intelligence</div>'
         f'<div class="bw-title">{html.escape(title)}</div>'
         f'<div class="bw-sub">{html.escape(subtitle)}</div>'
         f'<div>{badges}</div>'

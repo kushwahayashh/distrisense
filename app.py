@@ -3,7 +3,7 @@ import streamlit as st
 from app_lib import ui
 
 st.set_page_config(
-    page_title="DistriSense · Distribution Intelligence",
+    page_title="DistriSense",
     page_icon="📦",
     layout="wide",
     initial_sidebar_state="expanded",

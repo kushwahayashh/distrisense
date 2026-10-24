@@ -8,7 +8,7 @@ from . import artifacts
 
 CSS = """
 <style>
-.block-container { padding-top: 2.0rem; padding-bottom: 3rem; max-width: 1180px; }
+.block-container { padding-top: 5rem; padding-bottom: 3rem; max-width: 1180px; }
 .bw-brand { font-size: 1.15rem; font-weight: 800; color: #0F172A; letter-spacing: -0.01em; }
 .bw-hero { margin-bottom: 1.1rem; }
 .bw-title { font-size: 2.0rem; font-weight: 800; margin: .15rem 0 .35rem;

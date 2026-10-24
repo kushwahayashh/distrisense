@@ -10,7 +10,8 @@ This repository contains the **Streamlit app**, a separate mock demo, and the
 accepted computed **Normal** scenario in `engine_results/normal/`. Forecasting,
 optimization and evaluation live in the [backend repository](https://github.com/rahullamani01/engine-module-).
 Choose **Engine results → Normal** to view the verified delivery plans and Risk
-Dial. Computed Scarce Supply and Expiry Trap deliveries are still pending.
+Dial. Computed Scarce Supply and Expiry Trap deliveries are still pending; the
+next backend request is in [docs/NEXT_DELIVERY_REQUEST.md](docs/NEXT_DELIVERY_REQUEST.md).
 
 > ⚠️ All numbers in `results/` are synthetic mock data for UI development.
 > They are not engine results and must not be presented as such.
@@ -44,8 +45,10 @@ app_lib/artifacts.py       reads results/*.json — no engine imports
 app_lib/ui.py              shared styling, sidebar, cards
 app_pages/                 the three pages
 scripts/make_mock_results.py   deterministic mock artifacts (seed 42)
-results/                   engine → app contract (see CONTRACT.md)
+results/                   mock demo artifacts
+engine_results/            accepted computed artifacts + activation index
 CONTRACT.md                exact JSON schemas and invariants
+docs/NEXT_DELIVERY_REQUEST.md  pending Scarce Supply / Expiry Trap request
 ```
 
 ## Engine integration

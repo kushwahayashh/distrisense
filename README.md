@@ -48,6 +48,15 @@ CONTRACT.md                exact JSON schemas and invariants
 
 ## Engine integration
 
+**Updated integration:** use the sidebar's **Demo / Engine results** selector.
+Demo reads `results/`; engine mode reads **`engine_results/`** with canonical
+scenario folders `normal`, `scarce_supply`, and `expiry_trap`. There is no fallback
+between the two sources. See [engine_results/README.md](engine_results/README.md)
+for partial forecast delivery and the joint full-planner acceptance gate.
+
+The original handoff instructions below describe the artifact shapes; deliver
+computed artifacts to `engine_results/` instead of overwriting the demo.
+
 The app never imports the engine. It only reads `results/`.
 
 1. Engine writes `results/<scenario>/{meta,validation,forecast,plan,risk_dial,baselines,evaluation}.json`.

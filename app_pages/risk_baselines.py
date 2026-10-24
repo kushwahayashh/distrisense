@@ -19,7 +19,11 @@ ui.header(
 )
 
 if risk.empty:
-    st.error("No risk-dial results found for this scenario.")
+    st.info("Risk Dial not available yet. Waiting for the 200-draw engine evaluation.")
+    st.stop()
+
+if not artifacts.planner_ready(sid):
+    st.info("Risk Dial not available yet. Waiting for a complete, jointly validated A/B/D run.")
     st.stop()
 
 threshold_pct = st.slider(

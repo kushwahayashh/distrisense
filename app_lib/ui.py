@@ -100,18 +100,13 @@ def sidebar() -> str:
     st.sidebar.markdown('<div class="bw-brand">📦 DistriSense</div>', unsafe_allow_html=True)
     st.sidebar.caption("Adaptive Distribution Intelligence")
 
-    index = artifacts.load_index()
-    if not index or not index.get("scenarios"):
-        st.sidebar.error("No artifacts found.")
-        st.error(
-            "No results in `results/`. Run `python scripts/make_mock_results.py` "
-            "for mock data, or point the engine at `results/`."
-        )
-        st.stop()
-
-    scenarios = index["scenarios"]
-    ids = [s["id"] for s in scenarios]
-    labels = [s["name"] for s in scenarios]
+    source = st.sidebar.selectbox("Data source", ["Demo", "Engine results"], key="data_source")
+    ids = list(artifacts.SCENARIOS)
+    labels = list(artifacts.SCENARIOS.values())
+    if source == "Demo":
+        st.warning("Demo mode — synthetic mock numbers, not computed engine results.")
+    else:
+        st.info("Engine results — computed from synthetic data, not real-world performance.")
 
     if st.session_state.get("scenario_id") not in ids:
         st.session_state["scenario_id"] = ids[0]
@@ -130,9 +125,11 @@ def sidebar() -> str:
     st.sidebar.caption(
         f"Solver: `{meta.get('solver_status', '—')}` · {meta.get('solve_time_seconds', '—')}s"
     )
-    if index.get("mock", True):
+    if source == "Demo":
         st.sidebar.markdown("---")
         st.sidebar.caption("⚠️ Mock artifacts — UI development only. Not engine results.")
+    elif not artifacts.planner_ready(sid):
+        st.sidebar.warning("Full planner not available yet. Waiting for validated A/B/D artifacts.")
     st.sidebar.markdown("---")
     st.sidebar.caption(
         "Every plan is checked by an independent validator before it is shown or exported."

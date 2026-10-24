@@ -1,5 +1,20 @@
 # DistriSense Artifact Contract — Engine → App
 
+## Integration update: separate data sources
+
+The app now reads demo artifacts from `results/` and computed synthetic artifacts
+from **`engine_results/`**, selected in the sidebar. The file schemas below are
+unchanged. For engine deliveries, substitute `engine_results/` for `results/`
+and use canonical scenario directories `normal`, `scarce_supply`, `expiry_trap`.
+The UI maps its short aliases centrally; preserve backend IDs.
+
+Partial forecast delivery is allowed, but plans and Risk Dial stay unavailable
+until the selected scenario has all seven JSON files and `engine_results/index.json`
+has both `mock: false` and `integration_validated: true`. Set these only after
+joint A/B/D acceptance, never to bypass missing computation. A passing independent
+checker is additionally required to display/export shipment plans. See
+`engine_results/README.md` for details. Never mix demo files into an engine run.
+
 The app never imports the engine. It only reads JSON files under `results/`.
 This is deliberate: the UI keeps working while the engine is still being built,
 and a broken model can be swapped out without touching the app.

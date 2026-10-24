@@ -7,7 +7,11 @@ from app_lib import artifacts, ui
 sid = st.session_state["scenario_id"]
 meta = artifacts.meta(sid)
 val = artifacts.validation(sid)
-forecast = artifacts.forecast_df(sid)
+try:
+    forecast = artifacts.forecast_df(sid)
+except ValueError as exc:
+    forecast = pd.DataFrame()
+    st.error(f"Forecast cannot be displayed: {exc}")
 
 ui.header(
     "Data & Validation",
@@ -22,6 +26,8 @@ warnings = val.get("warnings", []) or []
 checks = val.get("checks", []) or []
 
 row_count = int(files["rows"].sum()) if not files.empty and "rows" in files else 0
+if not val:
+    st.info("Validation report not available yet. Waiting for saved engine results.")
 ui.cards(
     [
         ("Files checked", len(files), "6 CSVs + config.json"),
@@ -77,7 +83,7 @@ st.caption(
 )
 
 if forecast.empty:
-    st.info("No forecast file found.")
+    st.info("Forecast not available yet. Waiting for saved forecast and validated opening stock.")
 else:
     agg = forecast.groupby("store_id", as_index=False)[["p50", "p90"]].sum()
     fig = px.bar(

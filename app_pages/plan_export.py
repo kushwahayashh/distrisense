@@ -16,7 +16,11 @@ ui.header(
 )
 
 if not levels:
-    st.error("No plan file found in this scenario.")
+    st.info("Delivery plan not available yet. Waiting for the optimizer and independent checker.")
+    st.stop()
+
+if not artifacts.planner_ready(sid):
+    st.info("Full planner not available yet. Waiting for a complete, jointly validated A/B/D run.")
     st.stop()
 
 level = st.radio("Planning level", levels, horizontal=True, key=f"level_{sid}")
@@ -47,6 +51,7 @@ else:
     st.error(f"Checker failed — {len(violations)} violation(s). This plan must not be exported.")
     if violations:
         st.dataframe(pd.DataFrame(violations), hide_index=True, width="stretch")
+    st.stop()
 
 st.subheader("Options blocked by eligibility rules")
 ui.cards(

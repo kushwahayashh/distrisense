@@ -6,12 +6,13 @@ Weekly FMCG replenishment planner. For each store × SKU it recommends which
 warehouse batch to ship, how many units, and from where — and refuses any
 shipment that would arrive late or with too little shelf life left.
 
-This repository contains the **Streamlit app**, a separate mock demo, and the
-accepted computed **Normal** scenario in `engine_results/normal/`. Forecasting,
+This repository contains the **Streamlit app**, a separate mock demo, and all
+three computed synthetic scenarios in `engine_results/`. Forecasting,
 optimization and evaluation live in the [backend repository](https://github.com/rahullamani01/engine-module-).
-Choose **Engine results → Normal** to view the verified delivery plans and Risk
-Dial. Computed Scarce Supply and Expiry Trap deliveries are still pending; the
-next backend request is in [docs/NEXT_DELIVERY_REQUEST.md](docs/NEXT_DELIVERY_REQUEST.md).
+Choose **Engine results** and a scenario to view verified delivery plans, the
+Risk Dial and baselines. Review evidence is in
+[docs/NORMAL_PR1_REVIEW.md](docs/NORMAL_PR1_REVIEW.md) and
+[docs/SCARCE_EXPIRY_REVIEW.md](docs/SCARCE_EXPIRY_REVIEW.md).
 
 > ⚠️ All numbers in `results/` are synthetic mock data for UI development.
 > They are not engine results and must not be presented as such.
@@ -48,7 +49,7 @@ scripts/make_mock_results.py   deterministic mock artifacts (seed 42)
 results/                   mock demo artifacts
 engine_results/            accepted computed artifacts + activation index
 CONTRACT.md                exact JSON schemas and invariants
-docs/NEXT_DELIVERY_REQUEST.md  pending Scarce Supply / Expiry Trap request
+docs/SCARCE_EXPIRY_REVIEW.md   review evidence for the two added scenarios
 ```
 
 ## Engine integration

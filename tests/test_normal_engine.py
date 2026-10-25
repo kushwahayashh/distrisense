@@ -67,11 +67,11 @@ def test_recommendation_and_honest_baseline_tie():
     assert all(r["checker_passed"] for r in methods.values())
 
 
-def test_normal_is_activated_but_other_scenarios_are_not(monkeypatch):
+def test_all_computed_scenarios_are_activated(monkeypatch):
     monkeypatch.setattr(artifacts.st, "session_state", {"data_source": "Engine results"})
     assert artifacts.planner_ready("normal")
-    assert not artifacts.planner_ready("scarce")
-    assert not artifacts.planner_ready("expiry")
+    assert artifacts.planner_ready("scarce")
+    assert artifacts.planner_ready("expiry")
 
 
 def test_unaccepted_scenario_cannot_activate_just_by_copying_files(tmp_path, monkeypatch):

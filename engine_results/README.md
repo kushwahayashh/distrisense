@@ -4,10 +4,13 @@ This directory is intentionally separate from `results/`, which holds the demo.
 Choose **Engine results** in the sidebar to read this directory. Missing files
 show an unavailable state; the app never substitutes demo data here.
 
-The `normal/` directory contains all seven computed files from backend PR #1
-at `146d63d`, verified against its fixed head `75b1a6c`. The app owner approved
-Normal acceptance and activation, recorded in `index.json`. Scarce Supply and
-Expiry Trap remain unavailable. See `../docs/NORMAL_PR1_REVIEW.md` for evidence.
+All three directories now contain the seven computed files. Normal comes from
+backend PR #1 at `146d63d`, verified against fixed head `75b1a6c`, and was
+jointly accepted. Scarce Supply and Expiry Trap come from backend delivery
+`a514233` on `feat/scarce-expiry`; the backend owner was unavailable, so the app
+owner accepted them after an independent recheck. This is recorded in
+`index.json`. See `../docs/NORMAL_PR1_REVIEW.md` and
+`../docs/SCARCE_EXPIRY_REVIEW.md` for evidence.
 The original backend metadata's `joint_acceptance_pending` field is preserved
 as delivery-time provenance; the frontend index records subsequent acceptance.
 
@@ -30,7 +33,8 @@ evaluations remain unavailable. Do not copy mock files into this directory.
 
 ## Full-planner activation
 
-Only after A/B/D jointly validate a complete end-to-end run, write:
+Only after a complete end-to-end run is independently verified and accepted
+(jointly where both owners are available), write:
 
 ```json
 {

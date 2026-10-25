@@ -2,15 +2,33 @@
   "mock": false,
   "integration_validated": true,
   "scenarios": [
-    {"id": "normal", "name": "Normal"}
+    {"id": "normal", "name": "Normal"},
+    {"id": "scarce_supply", "name": "Scarce Supply"},
+    {"id": "expiry_trap", "name": "Expiry Trap"}
   ],
   "acceptance": {
-    "scope": "Normal only; scarce_supply and expiry_trap remain unavailable",
-    "backend_pr": "https://github.com/rahullamani01/engine-module-/pull/1",
-    "reviewed_backend_commit": "75b1a6cdb5ddb649262e405f347034ac8f133832",
-    "artifact_commit": "146d63dfb466746a2dccbc3578759987aaff1724",
-    "backend_merge_commit": "f61c73d174be557953dd5e60da1e796f8ad3384f",
-    "report": "docs/NORMAL_PR1_REVIEW.md",
-    "authorization": "App owner explicitly approved merge and Normal activation"
+    "scope": "All three synthetic scenarios are active in Engine results mode",
+    "normal": {
+      "backend_pr": "https://github.com/rahullamani01/engine-module-/pull/1",
+      "reviewed_backend_commit": "75b1a6cdb5ddb649262e405f347034ac8f133832",
+      "artifact_commit": "146d63dfb466746a2dccbc3578759987aaff1724",
+      "backend_merge_commit": "f61c73d174be557953dd5e60da1e796f8ad3384f",
+      "review": "docs/NORMAL_PR1_REVIEW.md",
+      "authorization": "Joint review: backend owner fixed the test portability issue; app owner independently verified and authorized activation"
+    },
+    "scarce_supply": {
+      "backend_branch": "feat/scarce-expiry",
+      "implementation_commit": "e94e05f19bea4c19a6f944c5675e0893ac374c58",
+      "delivery_commit": "a514233ebf349f71b85831e3fba77d5232f082ea",
+      "review": "docs/SCARCE_EXPIRY_REVIEW.md",
+      "authorization": "Single-owner acceptance: backend owner unavailable; app owner independently rechecked 18 plans and 200x40 draws, then ran 67 frontend tests"
+    },
+    "expiry_trap": {
+      "backend_branch": "feat/scarce-expiry",
+      "implementation_commit": "e94e05f19bea4c19a6f944c5675e0893ac374c58",
+      "delivery_commit": "a514233ebf349f71b85831e3fba77d5232f082ea",
+      "review": "docs/SCARCE_EXPIRY_REVIEW.md",
+      "authorization": "Single-owner acceptance: backend owner unavailable; app owner independently rechecked 18 plans and 200x40 draws, then ran 67 frontend tests"
+    }
   }
 }

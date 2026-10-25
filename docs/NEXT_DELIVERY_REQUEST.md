@@ -1,7 +1,11 @@
 # Next backend delivery — Scarce Supply and Expiry Trap
 
-Normal is accepted and active in the app. This is the request for the two
-remaining computed scenarios. Send this document to Rahul's backend chat.
+> **Completed:** both scenarios were delivered by the app owner on backend branch
+> `feat/scarce-expiry` at `a514233`. See `SCARCE_EXPIRY_REVIEW.md` for evidence.
+> This document is retained as the original delivery specification.
+
+Normal is accepted and active in the app. This was the request for the two
+remaining computed scenarios.
 
 ## Scope
 

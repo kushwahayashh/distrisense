@@ -78,7 +78,7 @@ Switch to **Scarce Supply**, stay on P50:
 > "Now supply is tight: 1,050 units against a 1,577 target. It ships **969** and
 > reports **608 unmet** — a constraint result, not a hidden failure."
 
-Click **Download plan CSV** on Normal.
+Switch back to **Normal**, then click **Download plan CSV**.
 > "The planner reviews and exports. The app does not dispatch trucks."
 
 ---

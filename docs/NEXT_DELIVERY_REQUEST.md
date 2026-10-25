@@ -1,8 +1,9 @@
 # Next backend delivery — Scarce Supply and Expiry Trap
 
 > **Completed:** both scenarios were delivered by the app owner on backend branch
-> `feat/scarce-expiry` at `a514233`. See `SCARCE_EXPIRY_REVIEW.md` for evidence.
-> This document is retained as the original delivery specification.
+> `feat/scarce-expiry` at `a514233`, merged in backend PR #2
+> (`3eafc66`). See `SCARCE_EXPIRY_REVIEW.md` for evidence. This document is
+> retained as the original delivery specification.
 
 Normal is accepted and active in the app. This was the request for the two
 remaining computed scenarios.

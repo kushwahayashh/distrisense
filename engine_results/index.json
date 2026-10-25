@@ -20,6 +20,7 @@
       "backend_branch": "feat/scarce-expiry",
       "implementation_commit": "e94e05f19bea4c19a6f944c5675e0893ac374c58",
       "delivery_commit": "a514233ebf349f71b85831e3fba77d5232f082ea",
+      "backend_merge_commit": "3eafc66a36606dfa7fcb1528550847a865a52644",
       "review": "docs/SCARCE_EXPIRY_REVIEW.md",
       "authorization": "Single-owner acceptance: backend owner unavailable; app owner independently rechecked 18 plans and 200x40 draws, then ran 67 frontend tests"
     },
@@ -27,6 +28,7 @@
       "backend_branch": "feat/scarce-expiry",
       "implementation_commit": "e94e05f19bea4c19a6f944c5675e0893ac374c58",
       "delivery_commit": "a514233ebf349f71b85831e3fba77d5232f082ea",
+      "backend_merge_commit": "3eafc66a36606dfa7fcb1528550847a865a52644",
       "review": "docs/SCARCE_EXPIRY_REVIEW.md",
       "authorization": "Single-owner acceptance: backend owner unavailable; app owner independently rechecked 18 plans and 200x40 draws, then ran 67 frontend tests"
     }

@@ -6,6 +6,8 @@ Implementation commit: `e94e05f19bea4c19a6f944c5675e0893ac374c58`
 
 Delivery commit: `a514233ebf349f71b85831e3fba77d5232f082ea`
 
+Backend merge commit: `3eafc66a36606dfa7fcb1528550847a865a52644` (PR #2)
+
 Delivery package: `deliveries/scarce-expiry-candidates/` in the backend repository.
 
 ## What was verified

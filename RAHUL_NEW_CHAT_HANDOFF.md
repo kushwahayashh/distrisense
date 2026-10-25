@@ -1,5 +1,10 @@
 # DistriSense — Full Context for Rahul's New AI Chat
 
+> **SUPERSEDED.** Do not upload this file. Read
+> [`RAHUL_HANDOFF.md`](RAHUL_HANDOFF.md) instead. The engine now lives in
+> `backend/` and the old backend repository is frozen. Kept for history;
+> cleanup is deferred until after submission.
+
 > Rahul: upload this entire file to your new AI chat. Also provide access to the
 > backend repository and the final PRD. Ask the AI to inspect current code before
 > changing anything. This file is a handoff, not proof that pending code exists.

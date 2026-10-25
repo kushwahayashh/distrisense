@@ -1,5 +1,9 @@
 # Engine Handoff — DistriSense
 
+> **SUPERSEDED.** This file describes an earlier two-repository state. Read
+> [`RAHUL_HANDOFF.md`](RAHUL_HANDOFF.md) instead. Kept for history; cleanup is
+> deferred until after submission.
+
 **Product:** DistriSense · **Team:** Byte Works
 **For:** the forecasting + optimization engine owner
 **From:** the app owner

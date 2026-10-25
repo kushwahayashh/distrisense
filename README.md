@@ -6,13 +6,17 @@ Weekly FMCG replenishment planner. For each store × SKU it recommends which
 warehouse batch to ship, how many units, and from where — and refuses any
 shipment that would arrive late or with too little shelf life left.
 
-This repository contains the **Streamlit app**, a separate mock demo, and all
-three computed synthetic scenarios in `engine_results/`. Forecasting,
-optimization and evaluation live in the [backend repository](https://github.com/rahullamani01/engine-module-).
-Choose **Engine results** and a scenario to view verified delivery plans, the
-Risk Dial and baselines. Review evidence is in
+This repository contains the **Streamlit app**, a separate mock demo, all three
+computed synthetic scenarios in `engine_results/`, and a frozen snapshot of the
+forecasting/optimization engine in [`backend/`](backend/). Choose **Engine
+results** and a scenario to view verified delivery plans, the Risk Dial and
+baselines. Review evidence is in
 [docs/NORMAL_PR1_REVIEW.md](docs/NORMAL_PR1_REVIEW.md) and
 [docs/SCARCE_EXPIRY_REVIEW.md](docs/SCARCE_EXPIRY_REVIEW.md).
+
+> **Engine work now belongs in [`backend/`](backend/).** The original standalone
+> backend repository is frozen at commit `3eafc66`; do not push to it. See
+> [`backend/SNAPSHOT.md`](backend/SNAPSHOT.md).
 
 > ⚠️ All numbers in `results/` are synthetic mock data for UI development.
 > They are not engine results and must not be presented as such.
@@ -48,6 +52,7 @@ app_pages/                 the three pages
 scripts/make_mock_results.py   deterministic mock artifacts (seed 42)
 results/                   mock demo artifacts
 engine_results/            accepted computed artifacts + activation index
+backend/                   frozen engine snapshot (own tests + environment)
 CONTRACT.md                exact JSON schemas and invariants
 docs/SCARCE_EXPIRY_REVIEW.md   review evidence for the two added scenarios
 ```
@@ -63,7 +68,7 @@ for partial forecast delivery and the joint full-planner acceptance gate.
 The original handoff instructions below describe the artifact shapes; deliver
 computed artifacts to `engine_results/` instead of overwriting the demo.
 
-The app never imports the engine. It only reads `results/`.
+The app never imports the engine. It only reads the JSON artifacts.
 
 1. Engine writes `results/<scenario>/{meta,validation,forecast,plan,risk_dial,baselines,evaluation}.json`.
 2. Engine writes `results/index.json`.
@@ -71,6 +76,30 @@ The app never imports the engine. It only reads `results/`.
 
 Schemas and invariants are in [CONTRACT.md](CONTRACT.md). The key rule: a plan is
 displayed or exported **only** when `checker.passed` is `true`.
+
+## Engine snapshot (`backend/`)
+
+`backend/` is a plain-folder snapshot of the standalone engine repository at
+`3eafc66` (post PR #2), copied from tracked files only. It is the active engine
+source from now on. It is **not** a git subtree and has its own dependencies, so
+keep its Python environment separate from the app's.
+
+```bash
+cd backend
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+
+python -m pytest -q
+python deliveries/normal-candidate/verify.py --rebuild
+python deliveries/scarce-expiry-candidates/verify.py scarce_supply
+python deliveries/scarce-expiry-candidates/verify.py expiry_trap
+```
+
+The app's tests never import `backend/`; the engine's tests never import the app.
+`engine_results/` remains the hand-off boundary. Full details, including why the
+Normal delivery keeps a `frozen-code/` snapshot, are in
+[`backend/SNAPSHOT.md`](backend/SNAPSHOT.md).
 
 ## Honest framing
 

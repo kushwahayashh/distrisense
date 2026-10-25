@@ -1,0 +1,4 @@
+PASS: 18 independently checked plans; shared 200 x 40 demand draws; frozen code and source hashes match.
+PASS: all-level evaluations, LP bounds, P50 comparisons and Risk Dial agree.
+PASS: current planner rebuilds all seven artifacts identically (timings excluded).
+Not frontend acceptance: activation remains off.

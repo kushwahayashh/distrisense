@@ -1,0 +1,16 @@
+.venv/
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ipynb_checkpoints/
+.DS_Store
+.idea/
+.vscode/
+# Generated artifacts (regenerate with: python -m src.baseline <scenario>)
+data/*
+outputs/*
+!data/.gitkeep
+!outputs/.gitkeep
+# Unactivated planner candidates; accepted engine_results stay separate.
+candidate_engine_results/

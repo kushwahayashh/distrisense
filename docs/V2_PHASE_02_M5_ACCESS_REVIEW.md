@@ -1,6 +1,6 @@
 # v2 Phase 2 — M5 access and usage review
 
-**Status:** Local files inspected. The user supplied the M5 Accuracy competition rules text (headed "Updated March 24, 2020"); it limits dataset use to non-commercial purposes and restricts redistribution. M5 is a conditional choice for non-commercial research, **not cleared as a commercial training-data source**. No data was copied into the repository or used to train a model.
+**Status:** Phase 2 access/terms gate cleared **for a local, non-commercial feasibility experiment only**, based on Rahul's reported confirmation of the official source and rules. Local files were inspected. The M5 Accuracy competition rules text (headed "Updated March 24, 2020") limits dataset use to non-commercial purposes and restricts redistribution. M5 is **not cleared as a commercial training-data source**. No data was copied into the repository or used to train a model.
 
 **Checked:** 28 November 2026. The accepted synthetic app and engine remain unchanged. This review is independent of the Phase 1 audit PR; the two PRs can be reviewed separately.
 
@@ -18,7 +18,7 @@ The text the user pasted from the [M5 Accuracy competition rules](https://www.ka
 - Rule B.7.B requires reasonable safeguards against access by people who have not agreed to the rules, and prohibits transmitting, publishing, redistributing or otherwise providing competition data to nonparticipants. Do not put raw or row-level data in a public repository, app, example, PR or downloadable artifact. Treat public derived examples conservatively until the provider clarifies their status.
 - Rule A.1's **open-source winner license** is about a winner's *submission/code*, **not** a commercial license for Walmart's competition data. A product cannot treat that paragraph as a data license.
 
-These are readings of user-provided rules text, not legal advice; the Kaggle page itself was not retrievable from the unauthenticated review environment. Confirm the current full rules and your own acceptance/access status on Kaggle. **No commercial training, deployment or redistribution based on this dataset** without independently secured rights. For a market-ready product, obtain properly licensed commercial data or a retailer agreement. Keep any M5 experiment local/non-commercial and its outputs clearly separate from the accepted synthetic demo.
+These are readings of user-provided rules text, not legal advice; the Kaggle page itself was not retrievable from the unauthenticated review environment. Rahul subsequently confirmed that he checked the official source and current rules; that confirmation is **owner-reported, not independently authenticated by this audit**. **No commercial training, deployment or redistribution based on this dataset** without independently secured rights. For a market-ready product, obtain properly licensed commercial data or a retailer agreement. Keep any M5 experiment local/non-commercial and its outputs clearly separate from the accepted synthetic demo.
 
 ## Local file inspection (no data published)
 
@@ -57,12 +57,13 @@ A streaming pass over the first six columns of **both** sales files found 10 sto
 
 ## Phase 2 gate
 
-**Research-only conditional; commercial use is not cleared.** Before proceeding to a local, non-commercial 40-series feasibility experiment:
+**Cleared for local non-commercial feasibility work, not for commercial use or public data release.** Before publishing any outputs, resolve the remaining publication question separately:
 
 - [x] Local files open; schema, headers, sizes and sales-pair counts recorded without publishing rows.
 - [x] User supplied competition rules text explicitly restricting dataset use to non-commercial purposes and restricting redistribution. This is **not** a commercial-use authorization.
-- [ ] Logged-in user confirms these files came from the official competition and matches the authenticated file inventory.
-- [ ] Logged-in user confirms the supplied rules text against the current source, their acceptance status and any additional public-output/attribution restrictions. Do not assume commercial rights.
+- [x] Rahul reports confirming the files came from the official competition and checking the authenticated source/rules. This is user-reported; no independent authenticated Kaggle check was possible in this review.
+- [x] Rahul reports checking the supplied rules against the source. The confirmed text limits use to non-commercial work and restricts redistribution; commercial rights are **not** granted.
+- [ ] Resolve any further public-output/attribution restrictions before publishing outputs; keep the local experiment private until then.
 - [ ] Both parties agree whether any actual sales rows may be published; default is **no**.
 
 For commercial training or deployment, select another dataset with explicit commercial rights or obtain written permission from the relevant rightsholder(s); M5's competition rules as supplied do **not** grant that right. If local research access cannot be confirmed, choose another properly licensed source before writing an adapter.
